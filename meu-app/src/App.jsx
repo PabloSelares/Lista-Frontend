@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
-const API_URL = 'http://localhost/usuarios';
+const API_URL = 'http://localhost:80/usuarios';
 
 export default function Usuarios() {
   const [usuarios, setUsuarios] = useState([]);
@@ -57,25 +58,15 @@ export default function Usuarios() {
   }, []);
 
   return (
-    <div style={{ maxWidth: 600, margin: '2rem auto', padding: '1rem', background: '#f4f6f8', color: '#333', fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" }}>
-      <h1 style={{ color: '#2c3e50' }}>Usuários</h1>
-      <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem' }}>
+    <div className="container">
+      <h1 className="title">Usuários</h1>
+      <ul className="userList">
         {usuarios.map(usuario => (
-          <li key={usuario._id} style={{ background: '#fff', padding: '1rem', marginBottom: '0.5rem', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <li key={usuario._id} className="userItem">
             <span>{`Nome: ${usuario.nome}, Email: ${usuario.email}`}</span>
             <button
               onClick={() => apagarUsuario(usuario._id)}
-              style={{
-                backgroundColor: '#e74c3c',
-                padding: '0.3rem 0.7rem',
-                borderRadius: 6,
-                border: 'none',
-                color: 'white',
-                cursor: 'pointer',
-                marginLeft: 8,
-              }}
-              onMouseOver={e => (e.currentTarget.style.backgroundColor = '#c0392b')}
-              onMouseOut={e => (e.currentTarget.style.backgroundColor = '#e74c3c')}
+              className="deleteButton"
             >
               Apagar
             </button>
@@ -83,14 +74,14 @@ export default function Usuarios() {
         ))}
       </ul>
 
-      <h2 style={{ color: '#2c3e50', marginBottom: '1rem' }}>Adicionar Usuário</h2>
-      <form onSubmit={adicionarUsuario} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+      <h2 className="subtitle">Adicionar Usuário</h2>
+      <form onSubmit={adicionarUsuario} className="form">
         <input
           type="text"
           placeholder="Nome"
           value={nome}
           onChange={e => setNome(e.target.value)}
-          style={{ padding: '0.7rem', flex: '1 1 45%', borderRadius: 6, border: '1px solid #ccc' }}
+          className="inputText"
           required
         />
         <input
@@ -98,24 +89,10 @@ export default function Usuarios() {
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          style={{ padding: '0.7rem', flex: '1 1 45%', borderRadius: 6, border: '1px solid #ccc' }}
+          className="inputText"
           required
         />
-        <button
-          type="submit"
-          style={{
-            padding: '0.7rem 1.5rem',
-            backgroundColor: '#3498db',
-            color: 'white',
-            border: 'none',
-            borderRadius: 6,
-            cursor: 'pointer',
-            flex: '1 1 100%',
-            marginTop: '1rem',
-          }}
-          onMouseOver={e => (e.currentTarget.style.backgroundColor = '#2980b9')}
-          onMouseOut={e => (e.currentTarget.style.backgroundColor = '#3498db')}
-        >
+        <button type="submit" className="submitButton">
           Adicionar
         </button>
       </form>

@@ -1,0 +1,84 @@
+/* App.css */
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #2980b9;
+  border-radius: 15px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+}
+
+.userList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.userItem {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deleteButton {
+  background-color: #e74c3c;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+}
+
+.subtitle {
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.inputText {
+  padding: 0.7rem;
+  flex: 1 1 45%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: black;
+}
+
+.submitButton {
+  padding: 0.7rem 1.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1 1 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #2980b9;
+}
